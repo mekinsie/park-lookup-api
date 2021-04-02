@@ -1,6 +1,5 @@
 FactoryBot.define do
 
-
   factory(:park) do
     State.create!(name: "Oregon")
     type_array = ["State park", "National park"]
