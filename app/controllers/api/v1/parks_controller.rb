@@ -18,6 +18,15 @@ class Api::V1::ParksController < ApplicationController
     end
   end
 
+  def create
+    if @park = Park.create!(park_params)
+      render status: 201, json: {
+        message: "You have successfully created a park.",
+        park: @park
+      }
+    end
+  end
+
   def update
     @park = Park.find(params[:id])
     if @park.update!(park_params)
@@ -30,6 +39,14 @@ class Api::V1::ParksController < ApplicationController
     end
   end
 
+  def destroy
+    @park = Park.find(params[:id])
+    if @park.destroy!
+      render status: 200, json: {
+        message: "You have successfully deleted the park with id #{@park.id}."
+      }
+    end
+  end
 
   private
   def park_params
