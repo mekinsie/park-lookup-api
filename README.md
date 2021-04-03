@@ -11,6 +11,7 @@ The objective of this project is to create a Rails API using RESTful principles,
 * Testing APIs with rspec request specs
 * Documenting your API endpoints
 * Handling exceptions when an API call fails
+* CORS is enabled
 
 ## Technologies used
 
@@ -26,6 +27,9 @@ The objective of this project is to create a Rails API using RESTful principles,
 * Faker
 * FactoryBot
 
+* * *
+## Authentication
+This services does not require any authentication. CORS is also enabled.
 * * *
 ## Software Requirements
 * **Ruby is required to run this application**
