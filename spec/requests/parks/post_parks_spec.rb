@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the park patch request", :type => :request do
+describe "the park post request", :type => :request do
 
   let!(:park) { FactoryBot.create(:park)}
   let!(:state) {FactoryBot.create(:state)}
