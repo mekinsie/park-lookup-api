@@ -3,6 +3,9 @@
 ### Authored by: Mekinsie Callahan
 
 ## Description
+
+This API allows users to search for parks (state and national parks) within a specific state. Users have full CRUD functionalities for both states and parks.  
+
 The objective of this project is to create a Rails API using RESTful principles, exploring the following topics:
 * Building an API that includes full CRUD functionality and nested routes
 * Successfully returning JSON objects via Postman and cURL
