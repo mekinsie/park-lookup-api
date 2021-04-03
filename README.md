@@ -1,7 +1,6 @@
 # Park Lookup API
 
-## Author
-Authored by: Mekinsie Callahan
+### Authored by: Mekinsie Callahan
 
 ## Description
 The objective of this project is to create a Rails API using RESTful principles, exploring the following topics:
@@ -64,32 +63,38 @@ $ gem install bundler
 $ bundle install
 ```
 
-6. Create a database for this project by typing the following into your terminal while located in the root directory:
+6. Create a database and seed it with the following command:
 ```
-$ rake db:create
+$ rake db:setup
 ```
+The database should now be correctly set up. And you may start a local server to interact with the project. 
 
-7. Add all tables to the database by typing the following in your terminal:
-```
-$ rake db:migrate
-```
-
-8. Seed the databse using Faker by typing the following into your terminal:
-```
-$ rake db:seed
-```
-The databse should now be correctly set up. And you may start a local server to interact with the project. 
-
-9. To start a local server, type the following into your terminal:
+7. To start a local server, type the following into your terminal:
 ```
 $ rails s
 ```
 Now that the server is running, you may make successfully make API calls.
-
+* * *
 ## How To Make an API Call
-Open an API call program such as <a href="https://www.postman.com/downloads/" alt="Link to Postman download">Postman</a>
+Open an API client such as <a href="https://www.postman.com/downloads/" alt="Link to Postman download">Postman</a>  
 
-_Note: All routes for park requests must have the correct corresponding state id._
+_Note:_  
+_* All API calls must have the base URL: http://localhost:3000/api/v1/_  
+_* All routes for park requests must have the correct corresponding state id._  
+_* In order to **post** a new state or park, you must input **all** of their params._  
+_* In order to **update** a state or park, you can choose to pass in only the param you want to change._
+
+**Params**
+* The params for a state is: _name_  
+* The params for a park is: _name, park_type ("State park" or "National park"), and state_id_  
+  
+
+**Example POST request for states:**
+<img src="./public/post_state.PNG">
+
+
+**Example POST request for parks:**
+<img src="./public/post_park.PNG">
 
  Action |  Route | Description
 | :--- | --- | ---: |
@@ -102,8 +107,16 @@ _Note: All routes for park requests must have the correct corresponding state id
 | Post | /states/{state_id}/parks | _Creates a park for a state_     |
 | Delete | /states/{state_id}/parks/{park_id} | _Deletes a park for a state_ |
 | Get | /states/{state_id}/parks/{park_id} | _Fetches a single park for a state_ |
-| Patch | /states/{state_id}/parks/{park_id} | _Updates a single park for a state_ |
-
+| Patch | /states/{state_id}/parks/{park_id} | _Updates a single park for a state_ |  
+* * *
+## Responses & Errors
+404 - Not Found  
+  **{ "message": "Couldn't find State/Park with 'id'=  "" }**  
+422 - Unprocessable Entity  
+  **{ "message": "Validation failed" }**  
+500 - Internal Server Error  
+  **{ "error": "Internal Server Error" }**
+* * *
 ## Running Tests
 * This application was created using test-driven development (TDD).
 * To run the tests yourself, follow the steps below.
