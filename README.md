@@ -80,9 +80,13 @@ The databse should now be correctly set up. And you may start a local server to 
 ```
 $ rails s
 ```
+Now that the server is running, you may make successfully make API calls.
 
 ## How To Make an API Call
 Open an API call program such as <a href="https://www.postman.com/downloads/" alt="Link to Postman download">Postman</a>
+
+_Note: All routes for park requests must have the correct corresponding state id._
+
  Action |  Route | Description
 | :--- | --- | ---: |
 | Get | /states | _Fetches all states_ |
